@@ -7,7 +7,6 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rimraf dist && npx mkdirp dist && npx copyfiles server.js package.json data/**/* public/**/* views/**/* dist/"
-
   },
   "keywords": [],
   "author": "",
@@ -17,8 +16,8 @@
     "express-handlebars": "^8.0.6",
     "fs": "^0.0.1-security",
     "handlebars": "^4.7.8",
+    "multer": "^2.0.2",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
   "type": "commonjs"
 }
