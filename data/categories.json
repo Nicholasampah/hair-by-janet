@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Re-do / Revamp Service",
+    "services": [
+      {
+        "name": "Unravel, Wash/Treat, Sew and Style",
+        "price": "300"
+      },
+      {
+        "name": "Unravel, Sew and Style",
+        "price": "200"
+      },
+      {
+        "name": "Wash/Treat and Style",
+        "price": "150"
+      }
+    ]
+  },
+  {
+    "name": "Styling Service",
+    "services": [
+      {
+        "name": "Straightening",
+        "price": "50"
+      },
+      {
+        "name": "Curling",
+        "price": "60"
+      }
+    ]
+  },
+  {
+    "name": "Wig making",
+    "services": [
+      {
+        "name": "Frontal",
+        "price": "500"
+      },
+      {
+        "name": "Closure",
+        "price": "600"
+      }
+    ]
+  }
+]

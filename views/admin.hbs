@@ -1,0 +1,45 @@
+<section class="admin-area">
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="services">Services</button>
+            <button class="tab-btn" data-tab="gallery">Gallery</button>
+        </div>
+
+        <!-- Services Tab -->
+        <div class="tab-content active" id="services-tab">
+            <div class="admin-section">
+                <h2>Manage Service Categories</h2>
+                
+                <div class="add-category-form">
+                    <h3>Add New Category</h3>
+                    <input type="text" id="newCategoryName" placeholder="Category Name (e.g., Hair Cuts)">
+                    <button class="btn" onclick="addCategory()">Add Category</button>
+                </div>
+
+                <div id="categoriesList" class="categories-list">
+                    <!-- Categories will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Tab -->
+        <div class="tab-content" id="gallery-tab">
+            <div class="admin-section">
+                <h2>Manage Gallery</h2>
+                
+                <div class="add-image-form">
+                    <h3>Add New Image</h3>
+                    <input type="text" id="newImageUrl" placeholder="Image URL">
+                    <input type="text" id="newImageAlt" placeholder="Image Description">
+                    <button class="btn" onclick="addGalleryImage()">Add Image</button>
+                </div>
+
+                <div id="galleryList" class="gallery-admin-grid">
+                    <!-- Gallery images will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

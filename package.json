@@ -1,0 +1,22 @@
+{
+  "name": "hair-by-janet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.6",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "type": "commonjs"
+}
