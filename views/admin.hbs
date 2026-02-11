@@ -31,9 +31,17 @@
                 
                 <div class="add-image-form">
                     <h3>Add New Image</h3>
-                    <input type="text" id="newImageUrl" placeholder="Image URL">
-                    <input type="text" id="newImageAlt" placeholder="Image Description">
-                    <button class="btn" onclick="addGalleryImage()">Add Image</button>
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(event)">
+                        <label for="imageUpload" class="upload-label">
+                            <span class="upload-icon">📷</span>
+                            <span>Click to upload or drag & drop</span>
+                            <span class="upload-hint">JPG, PNG, GIF, WEBP (Max 10MB)</span>
+                        </label>
+                    </div>
+                    <input type="text" id="newImageAlt" placeholder="Image Description (optional)">
+                    <div id="uploadPreview" class="upload-preview"></div>
+                    <button class="btn" id="addImageBtn" onclick="addGalleryImage()" disabled>Add Image</button>
                 </div>
 
                 <div id="galleryList" class="gallery-admin-grid">
@@ -43,3 +51,75 @@
         </div>
     </div>
 </section>
+
+<!-- Edit Category Modal -->
+<div class="modal" id="editCategoryModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Edit Category</h3>
+            <button class="modal-close" onclick="closeModal('editCategoryModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="editCategoryIndex">
+            <label>Category Name</label>
+            <input type="text" id="editCategoryName" placeholder="Category Name">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal('editCategoryModal')">Cancel</button>
+            <button class="btn" onclick="saveCategory()">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Service Modal -->
+<div class="modal" id="editServiceModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Edit Service</h3>
+            <button class="modal-close" onclick="closeModal('editServiceModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="editServiceCatIndex">
+            <input type="hidden" id="editServiceIndex">
+            <label>Service Name</label>
+            <input type="text" id="editServiceName" placeholder="Service Name">
+            <label>Price (₵)</label>
+            <input type="number" id="editServicePrice" placeholder="Price">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal('editServiceModal')">Cancel</button>
+            <button class="btn" onclick="saveService()">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Image Modal -->
+<div class="modal" id="editImageModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Edit Image</h3>
+            <button class="modal-close" onclick="closeModal('editImageModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="editImageIndex">
+            <input type="hidden" id="editImageCurrentSrc">
+            
+            <label>Replace Image (optional)</label>
+            <div class="upload-area small">
+                <input type="file" id="editImageUpload" accept="image/*" onchange="handleEditImageUpload(event)">
+                <label for="editImageUpload" class="upload-label">
+                    <span>Click to upload new image</span>
+                </label>
+            </div>
+            
+            <label>Description</label>
+            <input type="text" id="editImageAlt" placeholder="Image Description">
+            
+            <div class="image-preview" id="editImagePreview"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal('editImageModal')">Cancel</button>
+            <button class="btn" onclick="saveImage()">Save Changes</button>
+        </div>
+    </div>
+</div>

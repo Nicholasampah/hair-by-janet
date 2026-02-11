@@ -11,6 +11,11 @@
         <div class="container">
             <nav>
                 <a href="/" class="logo">Hair By Janet</a>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="/" class="{{#if (eq activePage 'home')}}active{{/if}}">Home</a></li>
                     <li><a href="/services" class="{{#if (eq activePage 'services')}}active{{/if}}">Services</a></li>
@@ -62,5 +67,11 @@
             </div>
         </div>
     </footer>
+<script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
