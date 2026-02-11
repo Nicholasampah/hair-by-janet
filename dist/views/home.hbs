@@ -1,0 +1,53 @@
+<section class="hero">
+    <div class="container">
+        <h1>Expert Hair Styling for Every Look</h1>
+        <p>At Hair By Janet, we believe everyone deserves to look and feel their best. Our team of skilled stylists is dedicated to creating the perfect style for you.</p>
+        <a href="/services" class="btn">View Our Services</a>
+    </div>
+</section>
+
+<section class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of hair services to help you look and feel your best. From cuts and colors to treatments and styling, our expert team has you covered.</p>
+        </div>
+        
+        <div class="categories">
+            {{#each categories}}
+            <div class="category">
+                <h3>{{this.name}}</h3>
+                {{#each this.services}}
+                <div class="service-item">
+                    <span class="service-name">{{this.name}}</span>
+                    <span class="service-price">₵{{this.price}}</span>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+            {{#unless categories}}
+            <p class="empty-message">No services available yet. Add services in the admin panel.</p>
+            {{/unless}}
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Gallery</h2>
+            <p>Take a look at some of our recent work. We pride ourselves on creating beautiful, personalized styles for each of our clients.</p>
+        </div>
+        
+        <div class="gallery-grid">
+            {{#each gallery}}
+            <div class="gallery-item">
+                <img src="{{this.src}}" alt="{{this.alt}}">
+            </div>
+            {{/each}}
+            {{#unless gallery}}
+            <p class="empty-message">No gallery images yet. Add images in the admin panel.</p>
+            {{/unless}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+<section class="content-area">
+    <div class="container">
+        <div class="section-title">
+            <h2>Gallery</h2>
+            <p>Browse through our collection of styles and cuts created by our talented team. Get inspired for your next visit!</p>
+        </div>
+        
+        <div class="gallery-grid">
+            {{#each gallery}}
+            <div class="gallery-item">
+                <img src="{{this.src}}" alt="{{this.alt}}">
+            </div>
+            {{/each}}
+            {{#unless gallery}}
+            <p class="empty-message">No gallery images yet. Add images in the admin panel.</p>
+            {{/unless}}
+        </div>
+    </div>
+</section>

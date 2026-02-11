@@ -1,0 +1,25 @@
+<section class="content-area">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Service Menu</h2>
+            <p>Explore our comprehensive range of hair services. Each service is provided by our experienced stylists who are committed to delivering exceptional results.</p>
+        </div>
+        
+        <div class="categories">
+            {{#each categories}}
+            <div class="category">
+                <h3>{{this.name}}</h3>
+                {{#each this.services}}
+                <div class="service-item">
+                    <span class="service-name">{{this.name}}</span>
+                    <span class="service-price">₵{{this.price}}</span>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+            {{#unless categories}}
+            <p class="empty-message">No services available yet. Add services in the admin panel.</p>
+            {{/unless}}
+        </div>
+    </div>
+</section>
